@@ -1,5 +1,5 @@
 # goit-js-hw-08-gallery
-goit-js-hw-08-gallery
+hw-08-gallery
 
 **Читать на других языках: [Русский](README.md), [Українська](README.ua.md).**
 
