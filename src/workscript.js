@@ -1,5 +1,5 @@
 
-import galleryItems from "./gallery-items.js"; /* імпорт функції default в ІНШИЙ файл script
+import galleryItems from "../src/gallery-items.js"; /* імпорт функції default в ІНШИЙ файл script
                                                  "d:/GitHub/goit-js-hw-08-gallery/src/gallery-items" */
 
 const galleryRef = document.querySelector(".gallery");  /*шукаємо список .gallery зі значення елем. по id */
