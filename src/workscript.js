@@ -1,5 +1,7 @@
 
-import galleryItems from "./gallery-items.js"; 
+import galleryItems from "./gallery-items.js"; /* імпорт функції default в ІНШИЙ файл script
+                                                 "d:/GitHub/goit-js-hw-08-gallery/src/gallery-items" */
+//console.log(galleryItems);  /* galleryItems[0] */
 
 const galleryRef = document.querySelector(".gallery");  /*шукаємо список .gallery зі значення елем. по id */
 const lightBoxRef = document.querySelector(".lightbox");         /*modal */
@@ -25,7 +27,11 @@ const imagesElement = galleryItems.reduce((acc, img) => {
     console.log("acc", acc);
     return acc += img;
 }, '');
-     
+            //       <span class="gallery__icon">
+            //          <i class="material-icons">zoom_out_map</i>
+            //       </span>
+
+            // </a>
 
 
 galleryRef.insertAdjacentHTML('afterbegin', imagesElement);
@@ -43,7 +49,7 @@ const openLightBox = (event) => {
 
 const closeLightBox = (event) => {
     if (lightBoxRef.classList.contains('is-open')) {
- 
+ // if (lightBoxRef.classList.contains('is-open') && event.target !== substImgRef) {
         lightBoxRef.classList.remove('is-open');
      // При закрытии попапа нужно очищать значение атрибутов src, alt
         substImgRef.removeAttribute('src', `${event.target.removeAttribute('data-source')}`);
@@ -70,14 +76,13 @@ closeBtnRef.addEventListener('click', closeLightBox);
   const rightArrowKey = (event) => {
     if (event.keyCode === 39)        /* код кл. 'rightArrow'  https://keycode.info//*/ 
       substImgRef.removeAttribute('src', `${event.target.removeAttribute('data-source')}`,'alt', `${event.target.removeAttribute('alt')}`);
-    
+     //ImgRef.setAttribute('src', `${event.current.target.getAttribute('data-source')}`);   
   }
   
-
+//}         //  galleryItems[0]
 
   const leftArrowKey = (event) => {
     if (event.keyCode === 37)        /* код кл. 'leftArrow'  https://keycode.info//*/ 
-  
+    //lightBoxRef.classList.remove('is-open');
      substImgRef.removeAttribute('src', `${event.target.removeAttribute('data-source')}`); 
   }
-
